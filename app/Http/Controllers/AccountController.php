@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Account;
+use App\Models\user;
+use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
@@ -12,17 +13,22 @@ class AccountController extends Controller
     }
 
     public function registration(Request $request){
-        $validatedData = $request->validate([
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required',
             'role' => 'nullable'
         ]);
-
-        $user = Account::create([
-            'email' => $validatedData['email'],
-            'password' => bcrypt($validatedData['password']),
-            'role' => 'nullable'
-        ]);
-        return redirect()->route('products.index');
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        $data['password'] = Hash::make($request->password);
+        $data['role'] = $request->password;
+        $user = User::create($data);
+        if(!$user){
+            return redirect()->route('registration');
+        }
+        {
+            return redirect()->route('login');
+        }
     }
 }

@@ -25,7 +25,6 @@ Route::put('/product/update/{product}', [ProductController::class, 'update'])->n
 Route::delete('/product/delete/{product}', [ProductController::class, 'delete'])->name('products.delete');
 Route::get('/register', [AccountController::class, 'register'])->name('register');
 Route::post('/register', [AccountController::class, 'registration'])->name('register.store');
-
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'loginPost'])->name('login.post');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

@@ -11,6 +11,8 @@
         @csrf
         @method('post')
         <br>
+        <label for="email">Name:</label>
+        <input type="text" name="name"  required>
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" required>
         <br>

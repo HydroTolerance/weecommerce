@@ -10,6 +10,9 @@
     <p>Index</p>
     <a href="{{route('products.create')}}">afasdfadfadsf</a>
     <div>
+        {{auth()->user()}}
+    </div>
+    <div>
         @if(session()->has('success'))
             <div>
                 {{session('success')}}
