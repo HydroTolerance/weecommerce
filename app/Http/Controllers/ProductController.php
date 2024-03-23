@@ -28,7 +28,6 @@ class ProductController extends Controller
             'qty' => "required|numeric",
             'description' => "required|string",
         ]);
-
         $createProduct = Product::create($data);
         return redirect(route('products.index'));
     }

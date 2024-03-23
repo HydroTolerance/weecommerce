@@ -20,11 +20,9 @@ class AccountController extends Controller
 
         $user = Account::create([
             'email' => $validatedData['email'],
-            'password' => bcrypt($validatedData['password']), // Hash the password
+            'password' => bcrypt($validatedData['password']),
             'role' => 'nullable'
         ]);
-
-        // Optionally, you can redirect the user after insertion
         return redirect()->route('products.index');
     }
 }
