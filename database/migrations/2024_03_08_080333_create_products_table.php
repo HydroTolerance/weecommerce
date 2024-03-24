@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_name');
             $table->integer('qty');
+            $table->integer('user_id');
             $table->decimal('price');
             $table->text('description');
             $table->rememberToken();

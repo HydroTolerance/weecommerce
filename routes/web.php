@@ -20,8 +20,10 @@ Route::get('/', [ProductController::class, 'products'])->name('products.index');
 Route::get('/product', [ProductController::class, 'products'])->name('products.index');
 Route::get('/product/create', [ProductController::class, 'create'])->name('products.create');
 Route::post('/product', [ProductController::class, 'store'])->name('products.store');
-Route::get('/product/edit/{product}', [ProductController::class, 'edit'])->name('products.edit');
-Route::put('/product/update/{product}', [ProductController::class, 'update'])->name('products.update');
+Route::middleware(['auth', 'owns.product'])->group(function () {
+    Route::get('/product/edit/{product:product_name}', [ProductController::class, 'edit'])->name('products.edit');
+    Route::put('/product/update/{product:product_name}', [ProductController::class, 'update'])->name('products.update');
+});
 Route::delete('/product/delete/{product}', [ProductController::class, 'delete'])->name('products.delete');
 Route::get('/register', [AccountController::class, 'register'])->name('register');
 Route::post('/register', [AccountController::class, 'registration'])->name('register.store');

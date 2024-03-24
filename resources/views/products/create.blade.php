@@ -6,10 +6,14 @@
     <title>Document</title>
 </head>
 <body>
+<div>
+        
+    </div>
     <h1>Create Products</h1>
     <form action="{{route('products.store')}}" method="post">
         @csrf
         @method('post')
+        <input type="hidden" value="{{auth()->user()->id}}" name="user_id"/>
         <label for="">Product Name</label>
         <input type="text" name="product_name"><br>
         <label for="">Price</label>
