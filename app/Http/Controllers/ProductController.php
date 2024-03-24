@@ -25,7 +25,7 @@ class ProductController extends Controller
     public function store(Request $request){
         $data = $request->validate([
             'product_name' => "required|string",
-            'price' => "required|regex:/^\d+(\.\d{1,2})?$/",
+            'price' => "required",
             'user_id' => "required|integer",
             'qty' => "required|numeric",
             'description' => "required|string",
@@ -37,7 +37,8 @@ class ProductController extends Controller
     public function update(Product $product, Request $request){
     $data = $request->validate([
         'product_name' => "required|string",
-        'price' => "required|regex:/^\d+(\.\d{1,2})?$/",
+        'price' => "required",
+        'user_id' => "required|integer",
         'qty' => "required|numeric",
         'description' => "required|string",
     ]);

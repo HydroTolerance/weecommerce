@@ -16,7 +16,7 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', [ProductController::class, 'products'])->name('products.index');
+Route::get('/', [ProductController::class, 'login'])->name('login');
 Route::get('/product', [ProductController::class, 'products'])->name('products.index');
 Route::get('/product/create', [ProductController::class, 'create'])->name('products.create');
 Route::post('/product', [ProductController::class, 'store'])->name('products.store');

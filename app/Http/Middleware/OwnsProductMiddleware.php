@@ -16,6 +16,7 @@ class OwnsProductMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $productId = $request->route('product')->id;
+
         if ($request->user()->products()->where('id', $productId)->exists()) {
             return $next($request);
         }
