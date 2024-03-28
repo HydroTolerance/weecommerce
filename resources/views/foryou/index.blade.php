@@ -6,13 +6,18 @@
   @vite('resources/css/app.css')
 </head>
 <body>
-    <div  class="flex flex-row-reverse">
-        <div class="border rounded p-4">
-            <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" class="w-20 h-24 mx-auto">
+        @include('components.header')
+    <div  class="flex flex-row-reverse ">
+        
+        <div class="border rounded p-4 shadow-sm ">
+            <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" style="width: 200px; height: 100px;" class="mx-auto">
             @foreach ($products as $product)
-                <div>
+                <div class="">
                     <div>
                         {{$product->product_name}} 
+                    </div>
+                    <div>
+                        {{$product->price}} 
                     </div>
                     <div>
                         {{$product->qty}}
