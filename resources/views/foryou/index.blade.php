@@ -10,7 +10,7 @@
     <div  class="flex flex-row-reverse ">
         
         <div class="border rounded p-4 shadow-sm ">
-            <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" style="width: 200px; height: 100px;" class="mx-auto">
+            <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" class="mx-auto">
             @foreach ($products as $product)
                 <div class="">
                     <div>

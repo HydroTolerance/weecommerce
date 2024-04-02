@@ -1,6 +1,6 @@
-<div class="bg-black w-screen ">
-    <div class="bg-black w-screen ">
-    <ul class="flex flex-row justify-between">
+<div class="bg-midnight w-screen bg-red-500">
+    <div class="">
+    <ul class="">
         <li>Header</li>
         <li><input type="text"></li>
     </ul>
